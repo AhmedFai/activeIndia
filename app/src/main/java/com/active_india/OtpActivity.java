@@ -37,7 +37,7 @@ public class OtpActivity extends AppCompatActivity implements OTPListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp);
-        OtpReader.bind(this, "HP-KKCARD");
+        OtpReader.bind(this, "TX-KKCARD");
 
         phn = (EditText) findViewById(R.id.number);
         otp = (EditText) findViewById(R.id.potp);
