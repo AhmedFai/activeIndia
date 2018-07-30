@@ -1,8 +1,10 @@
 package com.active_india;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -37,24 +39,28 @@ public class OtpActivity extends AppCompatActivity implements OTPListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp);
-        OtpReader.bind(this, "TX-KKCARD");
+        OtpReader.bind(this, "KKCARD");
 
         phn = (EditText) findViewById(R.id.number);
         otp = (EditText) findViewById(R.id.potp);
         get = (Button) findViewById(R.id.getOtp);
         proceed = (Button) findViewById(R.id.proceed);
 
-        SmsReceiver.bindListener(new SMSListener() {
+      /*  SmsReceiver.bindListener(new SMSListener() {
             @Override
             public void messageReceived(String messageText) {
                 Log.d("OTP Bind Wala", messageText);
                 otp.setText(messageText);
             }
-        });
+        });*/
 
         get.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                ActivityCompat.requestPermissions(OtpActivity.this,
+                        new String[]{Manifest.permission.READ_SMS,Manifest.permission.RECEIVE_SMS},
+                        1);
 
                 final ProgressDialog progressDialog = new ProgressDialog(OtpActivity.this,
                         R.style.AppTheme_Dark_Dialog);

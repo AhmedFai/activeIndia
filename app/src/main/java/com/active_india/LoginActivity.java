@@ -265,9 +265,9 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-                                            display_address(Config.Base_Url + "/API/addressApi.php?mobile=" + obj.getString("mobile"));
+                                            //display_address(Config.Base_Url + "/API/addressApi.php?mobile=" + obj.getString("mobile"));
 
-                                            /*SharedPreferences pref = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+                                            SharedPreferences pref = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
 
                                             if ("buy_now".equals(pref.getString("from_where", null))) {
 
@@ -284,7 +284,7 @@ public class LoginActivity extends AppCompatActivity {
                                                 startActivity(i);
                                                 finish();
 
-                                            }*/
+                                            }
 
 
                                         } else {
@@ -460,7 +460,7 @@ public class LoginActivity extends AppCompatActivity {
                                 }
 
 
-                                SharedPreferences pref = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+                               /* SharedPreferences pref = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
 
                                 if ("buy_now".equals(pref.getString("from_where", null))) {
 
@@ -477,7 +477,7 @@ public class LoginActivity extends AppCompatActivity {
                                     startActivity(i1);
                                     finish();
 
-                                }
+                                }*/
 
 
                             }
